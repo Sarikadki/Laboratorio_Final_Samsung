@@ -1,0 +1,175 @@
+:root {
+  --background-color: #f4f4f8;
+  --purple-light: #9664c7;
+  --purple-medium: #663399;
+  --purple-dark: #3a165e;
+
+  --pink-medium: #993396;
+  --pink-dark: #551453;
+
+  --section-bg: #fff;
+  --clear-font: #fff;
+
+  --error-msg: #D43B69;
+  --feedback-msg: #ca8cbd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  background: var(--background-color);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--purple-medium);
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--purple-dark);
+}
+
+main {
+  display: grid;
+  width: 100%;
+  justify-content: space-between;
+  gap: 1rem;
+  grid-template-columns: 30vw 50vw;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  background: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0px 14px 32px rgba(58, 36, 65, 0.1);
+  padding: 2.5rem;
+  transition: all 0.3s ease-out;
+}
+
+#table-section {
+  overflow-x: scroll;
+  display: none;
+}
+
+/* Form */
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+fieldset {
+  padding: 0;
+  margin-top: 2rem;
+  border: none;
+}
+
+form label {
+  display: block;
+  font-size: 0.8rem;
+}
+
+form p{
+  margin-bottom: 1.5rem;
+}
+
+form input[type='text'], 
+form input[type='email'], 
+form input[type='password'] {
+  width: 100%;
+  margin: 0.5rem 0 0.2rem 0;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background: #e4e0f1;
+  color: var(--purple-medium);
+  transition: background 0.3s ease-in-out;
+}
+
+form input[type='text']:focus,
+form input[type='email']:focus,
+form input[type='password']:focus {
+  background: #e9e5f3;
+  outline: none;
+}
+
+/* Buttons */ 
+button, form input[type='submit'] {
+  width: 100%;
+  background: var(--purple-medium);
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+  color: var(--clear-font);
+  transition: background 0.3s ease-in-out;
+}
+
+#consulta-btn{
+  background: var(--pink-medium);
+}
+
+form input[type='submit']:hover {
+  background: var(--purple-dark);
+}
+
+#consulta-btn:hover{
+  background: var(--pink-dark);
+}
+
+/* Table */
+table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+}
+
+table thead {
+  background-color: var(--purple-medium);
+  color: var(--clear-font);
+}
+
+table th, table td {
+  padding: 0.8rem;
+  border: 1px solid var(--purple-dark);
+  text-align: left;
+}
+
+table tr:nth-child(even) {
+  background-color: #f3e7ee;
+}
+
+/* Feedback */
+.error-message {
+  display: none;
+  background: var(--error-msg);
+  color: var(--clear-font);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.error-message::before {
+  content: '⚠';
+  margin-right: 5px;
+}
+
+.form-feedback {
+  display: none;
+  background: var(--feedback-msg);
+  color: var(--pink-dark);
+  font-weight: 400;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+}
